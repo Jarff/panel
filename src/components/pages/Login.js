@@ -13,6 +13,7 @@ export class Login extends Component {
     }
     submitForm = (e) => {
 		let has_error = false;
+		let data = {};
 		e.preventDefault();
 		let username = document.getElementById('username'),
 			password = document.getElementById('password');
@@ -26,6 +27,8 @@ export class Login extends Component {
 			username.classList.add('error');
 			this.triggerChange(username);
 			has_error = true;
+		}else{
+			data.username = username.value;
 		}
 		if(password.value === '' || password.value === ' '){
 			toast.warn("Password can't be empty",{
@@ -37,15 +40,35 @@ export class Login extends Component {
 			password.classList.add('error');
 			this.triggerChange(password);
 			has_error = true;
+		}else{
+			data.password = password.value;
 		}
 		if(!has_error){
-			toast.success("Login succesfull",{
-				position:"top-right",
-				autoClose:5000,
-				hideProgressBar: true,
-				closeOnClick: true
+			fetch('http://localhost/api/login', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(data)
+			})
+			.then((response) => {
+				return response.json();
+			})
+			.then((json) => {
+				console.log(json);
+				if(json.success){
+					toast.success("Login succesfull",{
+						position:"top-right",
+						autoClose:5000,
+						hideProgressBar: true,
+						closeOnClick: true
+					});
+				}
+			})
+			.catch((error) => {
+				console.log(error);
 			});
-			this.onSetResult('ASDFEEAW');
+			//this.onSetResult('ASDFEEAW');
 		}
 	}
 	onSetResult = (token) => {
