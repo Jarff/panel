@@ -18,7 +18,8 @@ export class Login extends Component {
 		e.preventDefault();
 		this.validateForm(e).then((data) => {
 			if(!data.has_error){
-				console.log(data);
+				document.getElementById('submit').innerHTML = '<div class="loadingSpinner"></div>';
+				document.getElementById('submit').setAttribute('disabled', true);
 				fetch('http://localhost/api/login', {
 					method: 'POST',
 	
@@ -48,20 +49,30 @@ export class Login extends Component {
 								})
 								.catch((error) => {
 									console.log(error);
+									document.getElementById('submit').innerHTML = 'Login';
 								});
 
 					}else{
 						toast.error("Invalid username or password",{
 							position:"top-right",
-							autoClose:2500,
+							autoClose:2000,
 							hideProgressBar: true,
 							closeOnClick: true
 						});
+						document.getElementById('submit').innerHTML = 'Login';
 					}
 				})
 				.catch((error) => {
 					console.log(error);
+					toast.error("Sorry something went wrong. Please try again later", {
+						position:"top-right",
+						autoClose:2000,
+						hideProgressBar: true,
+						closeOnClick: true
+					});
+					document.getElementById('submit').innerHTML = 'Login';
 				});
+				document.getElementById('submit').removeAttribute('disabled');
 				//this.onSetResult('ASDFEEAW');
 			}
 		})
@@ -135,7 +146,9 @@ export class Login extends Component {
 									<form className="form-content">
 										<input type="text" className="form-control" id="username" placeholder="Username" />
 										<input type="password" className="form-control" id="password" placeholder="Password" />
-										<input type="submit" id="submit" onClick={this.submitForm} className="login" value="login" />
+										<button type="submit" id="submit" onClick={this.submitForm} className="login" value="login">
+											Login
+										</button>
 									</form>
 							</div>
 						</div>
