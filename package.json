@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@toast-ui/react-calendar": "^1.0.1",
     "react": "^16.8.2",
     "react-calendar": "^2.18.1",
     "react-dom": "^16.8.2",

@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export class SideBar extends Component {
     render() {
-        console.log(this.props.location);
+        // console.log(this.props.location);
         return (
             <div>
                 <div className="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
@@ -24,6 +24,12 @@ export class SideBar extends Component {
                                 <NavLink className="nav-link" to="/profile">
                                     <i className="material-icons">person</i>
                                     <p>User Profile</p>
+                                </NavLink>                                
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/calendar">
+                                    <i className="material-icons">person</i>
+                                    <p>New calendar</p>
                                 </NavLink>                                
                             </li>
                         </ul>

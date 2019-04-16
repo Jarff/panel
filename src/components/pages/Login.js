@@ -8,6 +8,7 @@ export class Login extends Component {
     state = {
         token: null
 	}
+	disabled = false;
 	
     triggerChange = (element) => {
         element.addEventListener('change', (e) => {
@@ -16,10 +17,12 @@ export class Login extends Component {
     }
     submitForm = (e) => {
 		e.preventDefault();
+		if(this.disabled)
+			return;
 		this.validateForm(e).then((data) => {
 			if(!data.has_error){
 				document.getElementById('submit').innerHTML = '<div class="loadingSpinner"></div>';
-				document.getElementById('submit').setAttribute('disabled', true);
+				this.disabled = true;
 				fetch('http://localhost/api/login', {
 					method: 'POST',
 	
@@ -60,6 +63,7 @@ export class Login extends Component {
 							closeOnClick: true
 						});
 						document.getElementById('submit').innerHTML = 'Login';
+						this.disabled = false;
 					}
 				})
 				.catch((error) => {
@@ -71,13 +75,14 @@ export class Login extends Component {
 						closeOnClick: true
 					});
 					document.getElementById('submit').innerHTML = 'Login';
+					this.disabled = false;
 				});
-				document.getElementById('submit').removeAttribute('disabled');
 				//this.onSetResult('ASDFEEAW');
 			}
 		})
 		.catch((error) => {
 			console.log(error);
+			this.disabled = false;
 		});
 	}
 
@@ -146,7 +151,7 @@ export class Login extends Component {
 									<form className="form-content">
 										<input type="text" className="form-control" id="username" placeholder="Username" />
 										<input type="password" className="form-control" id="password" placeholder="Password" />
-										<button type="submit" id="submit" onClick={this.submitForm} className="login" value="login">
+										<button type="submit" disabled={this.disabled} id="submit" onClick={this.submitForm} className="login" value="login">
 											Login
 										</button>
 									</form>

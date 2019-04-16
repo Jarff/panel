@@ -9,18 +9,64 @@
 .fixed-plugin{width:0px;padding:15px;background: rgb(255, 61, 0)!important;}
 .fixed-plugin a{color:#fff;}
 .navbar.navbar-absolute{z-index:500 !important;}
-.loadingSpinner {
-    border: 4px solid #FFF;
-    border-top-color: rgba(0, 0, 0, 0);
-    border-left-color: rgba(0, 0, 0, 0);
-    width: 20px;
-    height: 20px;
-    opacity: 0.8;
-    border-radius: 50%;
-    margin: auto;
-    animation: loadingSpinner 0.7s infinite linear;
-    -webkit-animation: loadingSpinner 0.7s infinite linear;
-}
+/* input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea{border-bottom:unset;} */
+input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){border-bottom:unset;}
+/* #sidenav-overlay{background-color:transparent;} */
+.react-calendar{border:none !important;}
+label.active{color:#000;}
+.text-center{text-align:center;}
+table.events tbody th{border: 1px solid rgba(0, 0, 0, 0.06);position:relative;height:60px;padding:0px;}
+.evt-creator{cursor:normal;}
+.modal .modal-footer{height:70px;padding-right:30px;}
+.btn-floating{padding:0px;border-radius:50px;}
+.EfQccc.oMTcIc{cursor: -moz-grab;cursor: -webkit-grab;cursor: grab;}
+.EfQccc.KKjvXb, .GrxScd .EfQccc:focus {z-index: 100;}
+.EfQccc {position: absolute;-webkit-border-radius: 4px;border-radius: 4px;background-color: #fff;outline: none;}
+.EfQccc.KKjvXb::before {opacity: 1;transition: opacity 100ms linear;}
+.EfQccc::before {-webkit-box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.2);box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.2);opacity: 0;transition: opacity 100ms linear;}
+.EfQccc::before {position: absolute;top: 0;left: 0;width: 100%;height: 100%;content: '';-webkit-box-sizing: border-box;box-sizing: border-box;-webkit-border-radius: 4px;border-radius: 4px;pointer-events: none;}
+.EfQccc::after {position: absolute;top: 0;left: 0;width: 100%;height: 100%;content: '';-webkit-box-sizing: border-box;box-sizing: border-box;-webkit-border-radius: 4px;border-radius: 4px;pointer-events: none;}
+.ynRLnc {clip: rect(1px,1px,1px,1px);height: 1px;overflow: hidden;position: absolute;white-space: nowrap;width: 1px;}
+.lFe10c {max-height: 100%;overflow: hidden;padding-left: 8px;text-align: left;-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;user-select: none;}
+.Jmftzc.RIOtYe.cpCWFd>.FAxxKc, .Jmftzc.RIOtYe.cpCWFd.TuM9nf>.A6wOnd, .Jmftzc.gVNoLb>.JClzi {overflow: hidden;-webkit-box-flex: 0 1 auto;-webkit-flex: 0 1 auto;flex: 0 1 auto;}
+.Jmftzc.gVNoLb {max-width: 100%;white-space: nowrap;display: -webkit-box;display: -moz-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-align-items: center;align-items: center;}
+.Jmftzc.RIOtYe, .Jmftzc.EiZ8Dd.qqMC3e.RIOtYe, .Jmftzc.qqMC3e.RIOtYe {font-weight: 500;}
+.Jmftzc.RIOtYe {font-weight: 700;padding-top: 4px;white-space: normal;overflow-wrap: break-word;word-wrap: break-word;}
+.Jmftzc.EiZ8Dd {color: #fff;}
+.Jmftzc {font-size: 12px;line-height: 15px;overflow: hidden;white-space: nowrap;-webkit-font-smoothing: antialiased;}
+.lFe10c {max-height: 100%;overflow: hidden;padding-left: 8px;text-align: left;-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;user-select: none;}
+.Jmftzc.RIOtYe.cpCWFd, .Jmftzc.gVNoLb {max-width: 100%;white-space: nowrap;display: -webkit-box;display: -moz-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-align-items: center;align-items: center;}
+.loadingSpinner {border: 4px solid #FFF;border-top-color: rgba(0, 0, 0, 0);border-left-color: rgba(0, 0, 0, 0);width: 20px;height: 20px;opacity: 0.8;border-radius: 50%;margin: auto;animation: loadingSpinner 0.7s infinite linear;-webkit-animation: loadingSpinner 0.7s infinite linear;}
+
+/* //ROD CALENDAR */
+.rod-full-calendar-layout {height: 100%;position: relative;box-sizing: border-box;}
+.rod-full-calendar-layout * {box-sizing: border-box;}
+.rod-full-calendar-week-container {width: 100%;height: inherit;display: inline-block;font-size: 10px;}
+/* .rod-full-calendar-dayname-container {overflow-y: scroll;} */
+.rod-full-calendar-dayname-leftmargin {position: relative;height: 100%;}
+.rod-full-calendar-dayname.rod-full-calendar-today {font-weight: bold;}
+.rod-full-calendar-week-container .rod-full-calendar-today {background: none;}
+.rod-full-calendar-dayname {position: absolute;margin-left: -1px;height: 100%;overflow: hidden;}
+.rod-full-calendar-dayname-date {font-size: 26px;}
+.rod-full-calendar-dayname-name {font-weight: bold;font-size: 12px;}
+.rod-full-calendar-vlayout-container {position: relative;}
+.rod-full-calendar-timegrid-container {height: 100%;position: relative;overflow: hidden;overflow-y: scroll;}
+.rod-full-calendar-timegrid-left {position: absolute;}
+.rod-full-calendar-timegrid-hour {position: relative;color: #555;box-sizing: border-box;}
+.rod-full-calendar-timegrid-hour span {position: absolute;top: -11px;left: 0;right: 5px;text-align: right;line-height: 25px;}
+.rod-full-calendar-timegrid-right {position: relative;}
+.rod-full-calendar-timegrid-gridline {border-bottom: 1px solid #eee;box-sizing: border-box;background-color:#e9f4fb96;}
+.rod-full-calendar-timegrid-schedules {position: absolute;width: 100%;height: 100%;top: 0;left: 0;cursor: pointer;}
+.rod-full-calendar-time-date:last-child {border-right: none;margin: 0;}
+.rod-full-calendar-timegrid-hourmarker {position: absolute;width: 100%;display: table;}
+.rod-full-calendar-timegrid-hourmarker-line-left {position: absolute;min-height: 1px;left: 0;}
+.rod-full-calendar-timegrid-todaymarker {position: absolute;text-indent: -9999px;width: 9px;height: 9px;background-color: #135de6;margin: -4px 0 0 -5px;border-radius: 50%;}
+.rod-full-calendar-timegrid-hourmarker-line-today {position: absolute;min-height: 1px;}
+.rod-full-calendar-timegrid-hourmarker-line-right {position: absolute;min-height: 1px;right: 0;}
+.rod-full-calendar-timegrid-hourmarker {position: absolute;width: 100%;display: table;}
+.rod-full-calendar-timegrid-hourmarker-time {padding-right: 5px;line-height: 12px;display: table-cell;vertical-align: bottom;}
+
+
 @keyframes loadingSpinner {
     from {
         transform: rotate(0deg);
